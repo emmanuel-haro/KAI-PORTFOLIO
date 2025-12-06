@@ -1,34 +1,44 @@
-import { Calendar, MapPin, GraduationCap, Briefcase } from 'lucide-react';
+import { Calendar, MapPin, GraduationCap, Briefcase, Download } from 'lucide-react';
 
 const AboutSection = () => {
   return (
     <section id="about" className="py-32 relative">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          
+
           {/* Left side - Image/Visual */}
-          <div className="relative">
-            <div className="relative aspect-square max-w-md mx-auto">
+          <div className="relative flex justify-center lg:justify-start">
+            <div className="relative max-w-md w-full">
 
               {/* Decorative elements */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-blue-500/20 rounded-3xl rotate-6 animate-pulse-slow" />
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent rounded-3xl -rotate-3" />
 
               {/* Profile placeholder */}
-              <div className="relative glass-card p-8 rounded-3xl h-full flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary to-blue-500 flex items-center justify-center text-5xl font-heading font-bold text-primary-foreground">
-                    EK
-                  </div>
-
-                  <h3 className="text-2xl font-heading font-semibold mb-2">
-                    Emmanuel Kai Haro
-                  </h3>
-
-                  <p className="text-primary font-medium">
-                    Full Stack Developer & Data Analyst
-                  </p>
+              <div className="relative glass-card p-8 rounded-3xl z-10 flex flex-col items-center">
+                
+                {/* Avatar */}
+                <div className="w-32 h-32 mb-6 rounded-full bg-gradient-to-br from-primary to-blue-500 flex items-center justify-center text-5xl font-heading font-bold text-primary-foreground">
+                  EK
                 </div>
+
+                {/* Name & title */}
+                <h3 className="text-2xl font-heading font-semibold mb-2 text-center">
+                  Emmanuel Kai Haro
+                </h3>
+                <p className="text-primary font-medium text-center">
+                  Full Stack Developer & Data Analyst
+                </p>
+
+                {/* CV Download Button */}
+                <a
+                  href="/cv/EmmanuelKaiHaro_CV.pdf"
+                  download
+                  className="mt-6 inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition shadow-md"
+                >
+                  <Download size={20} />
+                  Download CV
+                </a>
               </div>
 
             </div>
@@ -36,16 +46,18 @@ const AboutSection = () => {
 
           {/* Right side - Content */}
           <div>
+            {/* About Me Heading */}
             <span className="text-primary font-medium mb-4 block uppercase tracking-widest text-sm">
               About Me
             </span>
 
-            <h2 className="section-title mb-6">
+            <h2 className="section-title mb-6 text-3xl lg:text-4xl font-bold leading-tight">
               Passionate Developer <br />
               <span className="gradient-text">Building the Future</span>
             </h2>
 
-            <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+            {/* About Text */}
+            <p className="text-muted-foreground text-lg leading-relaxed mb-6">
               I'm a 22-year-old aspiring Full Stack Web Developer based in Kenya,
               currently completing my degree in Project Planning and Management
               at Jomo Kenyatta University of Agriculture and Technology (JKUAT).
@@ -61,7 +73,7 @@ const AboutSection = () => {
               data-driven, scalable web applications.
             </p>
 
-            {/* Info cards */}
+            {/* Info Cards */}
             <div className="grid sm:grid-cols-2 gap-4">
 
               <div className="glass-card-hover p-4 flex items-center gap-4">
