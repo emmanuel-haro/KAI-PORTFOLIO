@@ -19,7 +19,7 @@ const AboutSection = () => {
                     EK
                   </div>
                   <h3 className="text-2xl font-heading font-semibold mb-2">Emmanuel Kai Haro</h3>
-                  <p className="text-primary font-medium">Full Stack Developer</p>
+                  <p className="text-primary font-medium">Full Stack Developer & Data Analyst</p>
                 </div>
               </div>
             </div>
@@ -45,9 +45,10 @@ const AboutSection = () => {
 
             <p className="text-muted-foreground text-lg leading-relaxed mb-12">
               Recently graduated from PLP Academy's intensive Full Stack Web
-              Development program, specializing in the MERN stack. I combine
-              technical expertise with strong analytical skills to deliver
-              high-quality, scalable web applications.
+              Development program, specializing in the MERN stack. I also have
+              expertise in Data Analytics and Data Science, combining technical
+              development skills with strong analytical capabilities to deliver
+              data-driven, scalable web applications.
             </p>
 
             {/* Info cards */}
@@ -88,7 +89,7 @@ const AboutSection = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Specialization</p>
-                  <p className="font-medium">MERN Stack</p>
+                  <p className="font-medium">MERN Stack & Data Analytics</p>
                 </div>
               </div>
             </div>
