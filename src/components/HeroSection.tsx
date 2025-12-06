@@ -31,6 +31,7 @@ const HeroSection = () => {
           {/* Title */}
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-in-up delay-200">
             Full Stack Web Developer{' '}
+            <span className="text-primary">|</span> Data Analyst{' '}
             <span className="text-primary">|</span> MERN Specialist
           </p>
 
@@ -74,7 +75,7 @@ const HeroSection = () => {
               />
             </a>
             <a
-              href="https://github.com"
+              href="https://github.com/emmanuel-haro"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-secondary/50 hover:bg-primary/20 border border-border hover:border-primary/50 transition-all duration-300 group"
@@ -86,7 +87,7 @@ const HeroSection = () => {
               />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/emmanuel-haro-4735392b8"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-secondary/50 hover:bg-primary/20 border border-border hover:border-primary/50 transition-all duration-300 group"
