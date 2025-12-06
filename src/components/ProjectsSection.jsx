@@ -115,7 +115,7 @@ const ProjectsSection = () => {
 
         <div className="text-center">
           <Button variant="hero-outline" size="lg" asChild>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/emmanuel-haro" target="_blank" rel="noopener noreferrer">
               <Github size={20} className="mr-2" />
               View All on GitHub
             </a>

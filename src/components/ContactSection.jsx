@@ -144,7 +144,7 @@ const ContactSection = () => {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 rounded-lg bg-secondary/50 border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-foreground placeholder:text-muted-foreground"
-                  placeholder="John Doe"
+                  placeholder="Emmanuel Haro"
                 />
               </div>
 
@@ -160,7 +160,7 @@ const ContactSection = () => {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 rounded-lg bg-secondary/50 border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-foreground placeholder:text-muted-foreground"
-                  placeholder="john@example.com"
+                  placeholder="Emmanuel@example.com"
                 />
               </div>
 
