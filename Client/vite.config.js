@@ -15,6 +15,4 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-    base: "/KAI-PORTFOLIO/",
-  plugins: [react()],
 }));
