@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useMemo } from 'react';
 import { ExternalLink, Github, Plus, Folder } from 'lucide-react';
 import { Button } from './ui/button';
+import { useQuery } from '@tanstack/react-query';
+import { fetchPortfolio } from '@/lib/api';
 
-const initialProjects = [
+const fallbackProjects = [
   {
-    id: '1',
+    id: 'seed-1',
     title: 'Portfolio Website',
     description:
       'A cinematic personal portfolio built with React, TypeScript, and Tailwind CSS showcasing my skills and projects.',
@@ -13,10 +15,10 @@ const initialProjects = [
     githubUrl: '#',
   },
   {
-    id: '2',
+    id: 'seed-2',
     title: 'Coming Soon',
     description:
-      'More exciting projects are in development. Check back soon to see what I\'m building next!',
+      "More exciting projects are in development. Check back soon to see what I'm building next!",
     technologies: ['MERN Stack', 'Coming Soon'],
   },
 ];
@@ -74,7 +76,25 @@ const ProjectCard = ({ project }) => (
 );
 
 const ProjectsSection = () => {
-  const [projects] = useState(initialProjects);
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ['portfolio'],
+    queryFn: fetchPortfolio,
+    staleTime: 1000 * 60,
+    retry: 1,
+  });
+
+  const projects = useMemo(() => {
+    if (isError || !data) return fallbackProjects;
+    return data.map((item) => ({
+      id: item.id || item._id,
+      title: item.title,
+      description: item.description,
+      technologies: item.technologies?.length ? item.technologies : item.tags || [],
+      liveUrl: item.liveUrl,
+      githubUrl: item.githubUrl,
+      imageUrl: item.imageUrl,
+    }));
+  }, [data, isError]);
 
   return (
     <section id="projects" className="py-32 relative">
@@ -93,6 +113,11 @@ const ProjectsSection = () => {
             A showcase of my latest projects and applications. Each project
             represents my commitment to quality and innovation.
           </p>
+          {isError && (
+            <p className="text-sm text-destructive mt-3">
+              Could not load live projects, showing fallback items.
+            </p>
+          )}
         </div>
 
         {/* Projects grid */}
@@ -106,9 +131,13 @@ const ProjectsSection = () => {
             <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
               <Plus size={24} className="text-primary" />
             </div>
-            <h3 className="text-lg font-heading font-semibold mb-2">Add New Project</h3>
+            <h3 className="text-lg font-heading font-semibold mb-2">
+              {isLoading ? 'Loading...' : 'Add New Project'}
+            </h3>
             <p className="text-muted-foreground text-sm text-center">
-              More projects coming soon as I build and learn
+              {isLoading
+                ? 'Fetching your latest work'
+                : 'More projects coming soon as I build and learn'}
             </p>
           </div>
         </div>
